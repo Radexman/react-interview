@@ -1,21 +1,19 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
+import LinkElement from './components/LinkElement';
 
-const element = React.createElement('a', { href: 'https://zrozumiecreact.pl' }, 'Test');
-const elemntInJSX = <a href='https://zrozumiecreact.pl'>Test 3</a>;
-console.log(<h1>hello world</h1>); // -> React.createElement('h1', null, 'hello world')
-console.log(element);
-
-const currentDate = new Date();
-const hours = currentDate.getHours();
-const minutes = currentDate.getMinutes();
-
-console.log(hours, minutes);
-
-const time = (
-	<div>
-		{hours}:{minutes}
-	</div>
+const element = (
+	<>
+		<h1>Nasza strona!</h1>
+		<main>
+			<LinkElement text='Super strona kursu' />
+			<p>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente earum mollitia, ut iure labore nam in
+				asperiores tenetur incidunt. Vel debitis doloremque repellendus quibusdam voluptatem non soluta ad
+				dolore temporibus.
+			</p>
+			<LinkElement text='Strona kursu' />
+		</main>
+	</>
 );
 
-createRoot(document.getElementById('root')!).render(time);
+createRoot(document.getElementById('root')!).render(element);
