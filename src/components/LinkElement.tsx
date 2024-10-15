@@ -1,25 +1,19 @@
 type LinkElementProps = {
 	text: string;
+	redirect: boolean;
 };
 
-type SpanElementProps = {
-	text: string;
-};
-
-const LinkElement = ({ text }: LinkElementProps) => {
+const LinkElement = ({ text, redirect }: LinkElementProps) => {
+	const address = 'https://zrozumiecreact.pl';
 	return (
 		<a
-			href='https://zrozumiecreact.pl'
-			target='_blank'
-			rel='noopener noreferrer'
+			href={address}
+			target={redirect ? '_blank' : '_self'}
+			rel={redirect ? 'noopener noreferrer' : undefined}
 		>
 			{text}
 		</a>
 	);
-};
-
-export const SpanElement = ({ text }: SpanElementProps) => {
-	return <span>{text}</span>;
 };
 
 export default LinkElement;
